@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Marvel + D3</title>
+</head>
+<body>
+  <script type="text/javascript" src="d3/d3.min.js"></script>
+  <script type="text/javascript">
+
+    // D3 comes with XMLHttpRequest support so we don't have to rely on jQuery etc... if we don't
+    // want to.
+    d3.json("sample.js", function(error, data) {
+      var apiResults = data.data.results;
+      var dates = [];
+
+      // Loop through results and stuff comic book release dates in array.
+      for (var i = 0; i < apiResults.length; i++) {
+        var date = apiResults[i].dates[0].date;
+        dates.push(date);
+      };
+
+      // Visualize data.
+      visualizer(dates);
+    });
+
+    var visualizer = function(data) {
+      // Append dates array to the DOM.
+      d3.select("body").selectAll("p")
+        .data(data)
+        .enter()
+        .append("p")
+        .text(function(d) {
+          return d;
+      });
+    }
+
+  </script>
+</body>
+</html>
