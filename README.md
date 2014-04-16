@@ -3,13 +3,15 @@ marvel
 
 ### PROJECT PLAN
 
-**OG Pseudo-code summary:**
-User inputs 2 characters.
-User clicks button.
-     Must validate for minimum of 2 characters.
-Make GET API call to Marvel.
-Build dates array: data.results[x].dates[0].date
-Feed new dates array into D3 chart
+**OG Pseudo-code summary:**    
+```
+User inputs 2 characters.    
+User clicks button.    
+     Must validate for minimum of 2 characters.    
+Make GET API call to Marvel.    
+Build dates array: data.results[x].dates[0].date    
+Feed new dates array into D3 chart    
+```
 
 **Tasks:**
 * Figure out data model
